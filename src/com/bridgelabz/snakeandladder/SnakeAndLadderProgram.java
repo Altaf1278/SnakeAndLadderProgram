@@ -10,14 +10,17 @@ public class SnakeAndLadderProgram {
 		currentPosition = START_POSITION;
 		SnakeAndLadderProgram snakeAndLadderProgram = new SnakeAndLadderProgram();
 		snakeAndLadderProgram.diceRolls();
+
 	}
 
 	public void diceRolls() {
+		int rollingDice = 0;
 		while (currentPosition < WINNING_POSITION) {
 
 			int dieRoll = (int) Math.floor(Math.random() * 6) + 1; // roll the die and get a number between 1 and 6
-			int option = (int) Math.floor(Math.random() * 3); // get a random number between 0 and 2 to determine the
+			int option = (int) Math.floor(Math.random() * 3); // get a random number between 0 and 2 to determine the //
 																// option
+			rollingDice++;
 
 			switch (option) {
 			case 0: // No Play
@@ -43,5 +46,6 @@ public class SnakeAndLadderProgram {
 
 		}
 		System.out.println(currentPosition);
+		System.out.println("After rolling the dice: " + rollingDice);
 	}
 }
